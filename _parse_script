@@ -1,0 +1,50 @@
+#!/bin/bash
+
+ASSEMBLY_TO_HEX="assembly_hex.txt"
+ASSEMBLY="assembly.txt"
+
+TEMP_FILE="temp_lang"
+OUTPUT_FILE="malware_lang"
+
+LOG_FILE="logs.txt"
+
+# remove pre-existing log file
+rm "${LOG_FILE}"
+# remove pre-existing output files
+rm "${OUTPUT_FILE}_"* 2>> "${LOG_FILE}"
+
+# loop over assembly code files
+COUNTER=1
+for file in *.asm;
+do
+        # create output file
+        cp "${file}" "${TEMP_FILE}_${COUNTER}"
+        
+        # parse file...
+        
+        # remove all words starting with .text #
+        sed -i -e 's/.text[^ ]*//g' "${TEMP_FILE}_${COUNTER}"
+        # remove all lines starting with ; #
+        sed -i -e '/;/ d' "${TEMP_FILE}_${COUNTER}"
+        # remove all words from malware_asm_1.asm that are in assembly_hex.txt #
+        sed -i -e "$(sed 's:.*:s/&//g:' assembly_hex.txt)" "${TEMP_FILE}_${COUNTER}"
+        # print all lines from malware_asm_1.asm with words from assembly.txt #
+        sed -n "$(sed 's:.*:/& / p:' assembly.txt)" "${TEMP_FILE}_${COUNTER}"  >> "${OUTPUT_FILE}_${COUNTER}" 
+        
+        # clean up
+        rm "${TEMP_FILE}_${COUNTER}" 2>> "${LOG_FILE}"
+
+        # remove all leading and trailing white spaces and new lines #
+        tr -d '\011\015' < "${OUTPUT_FILE}_${COUNTER}" > "${TEMP_FILE}_${COUNTER}"
+        tr -s " " < "${TEMP_FILE}_${COUNTER}" > "${OUTPUT_FILE}_${COUNTER}"
+        sed -i -e 's/^[ \t]*//;s/[ \t]*$//' "${OUTPUT_FILE}_${COUNTER}"
+
+        # clean up
+        rm "${TEMP_FILE}_${COUNTER}" 2>> "${LOG_FILE}"
+        rm "${TEMP_FILE}_${COUNTER}-e" 2>> "${LOG_FILE}"
+        rm "${OUTPUT_FILE}_${COUNTER}-e" 2>> "${LOG_FILE}"
+
+        let COUNTER=COUNTER+1
+done
+
+

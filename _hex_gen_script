@@ -1,0 +1,35 @@
+#!/bin/bash
+
+OUTPUT_FILE="assembly_hex.txt"
+
+if [ -a "$OUTPUT_FILE" ]
+then
+        echo "assembly_hex file exists..."
+        echo "replacing file..."
+        rm -f "$OUTPUT_FILE"
+fi
+
+for i in `seq 0 9`;
+do
+        for j in `seq 0 9`;
+        do
+                echo $i$j >> "$OUTPUT_FILE"
+        done
+        for k in A B C D E F;
+        do
+               echo $i$k >> "$OUTPUT_FILE"
+        done
+done
+
+for i in A B C D E F
+do
+        for j in `seq 0 9`;
+        do
+                echo $i$j >> "$OUTPUT_FILE"
+        done
+        for k in A B C D E F;
+        do
+               echo $i$k >> "$OUTPUT_FILE"
+        done
+done
+
