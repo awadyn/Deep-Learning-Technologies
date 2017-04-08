@@ -1,0 +1,24 @@
+# get vocabulary:
+vocab_file = open("malware_vocabulary", "r")
+
+# keep only unique words
+vocab = list(set(vocab_file.read().splitlines()))
+
+# get one document (delimited by \n)
+test_file = open("parsed_malwares/malware_lang_3", "r")
+test = test_file.read()
+corpus = [test]
+
+# create vectorizer
+from sklearn.feature_extraction.text import CountVectorizer
+import nltk
+import re
+pattern = re.compile('^[A-Za-z0-9]+(?:\\.[A-Za-z0-9]+)*', flags=re.M)
+vectorizer = CountVectorizer(min_df=1, vocabulary=vocab, analyzer=partial(nltk.regexp_tokenize, pattern=pattern))
+
+# use vectorizer
+vectorizer._validate_vocabulare()
+X = vectorizer.fit_transform(corpus)
+X.toarray()
+
+# to get nBOW, divide all frequencies by num of vocabulary words
