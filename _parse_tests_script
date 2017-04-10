@@ -5,11 +5,11 @@ MALWARE_CLASS=$1
 ASSEMBLY_TO_HEX="assembly_hex.txt"
 ASSEMBLY="assembly.txt"
 
-INPUT_DIR="malware_by_class/${MALWARE_CLASS}"
+INPUT_DIR="malware_by_class_test/${MALWARE_CLASS}"
 
 TEMP_FILE="temp_lang"
-OUTPUT_FILE="temp_parsed_malwares/malware_lang_temp"
-FINAL_OUTPUT_FILE="parsed_malwares/malware_lang_${MALWARE_CLASS}"
+OUTPUT_FILE="temp_parsed_test_malwares/malware_lang_temp"
+FINAL_OUTPUT_FILE="parsed_test_malwares/malware_lang_${MALWARE_CLASS}"
 
 LOG_FILE="logs.txt"
 
@@ -28,7 +28,7 @@ do
         # create output file
         cp "${file}" "${TEMP_FILE}_${COUNTER}"
         
-        echo "parsing file ${file}..."
+        echo "parsing test file ${file}..."
         # parse file...
         
         sed -i -e "s/.text[^ ]*//g; /;/ d; $(sed 's:.*:s/&//g:' assembly_hex.txt)" "${TEMP_FILE}_${COUNTER}"
@@ -44,7 +44,7 @@ do
 
         cat "${OUTPUT_FILE}_${COUNTER}" >> "${FINAL_OUTPUT_FILE}"
         zip -r "${FINAL_OUTPUT_FILE}.zip" "${FINAL_OUTPUT_FILE}"
-        echo "finished parsing file ${file}..."
+        echo "finished parsing test file ${file}..."
 
         # clean up
         rm "${TEMP_FILE}_${COUNTER}" 2>> "${LOG_FILE}"
@@ -53,5 +53,4 @@ do
 
         let COUNTER=COUNTER+1
 done
-
 
