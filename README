@@ -1,0 +1,10 @@
+Document distance between malware_A and malware_B:
+--------------------------------------------------
+1-  generate malware vocabulary
+    ---> run: python generate_vocabulary.py
+
+2-  given malware_A and malware_B, calculate distance between them
+    ---> all training malware documents exist in parsed_malwares
+    ---> all testing malware documents exist in parsed_test_malwares
+    ---> run:   python process_for_wmd.py parsed_malwares/malware_A parsed_test_malwares/malware_B
+                python find_wmd.py
