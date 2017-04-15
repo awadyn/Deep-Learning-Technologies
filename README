@@ -1,10 +1,12 @@
 Document distance between malware_A and malware_B:
 --------------------------------------------------
-1-  generate malware vocabulary
+1-  parse malwares
+    ---> run: ./_parse_script <class>
+    ---> run: ./_parse_test_script <test_folder>
+
+2-  generate malware vocabulary
     ---> run: python generate_vocabulary.py
 
-2-  given malware_A and malware_B, calculate distance between them
-    ---> all training malware documents exist in parsed_malwares
-    ---> all testing malware documents exist in parsed_test_malwares
-    ---> run:   python process_for_wmd.py parsed_malwares/malware_A parsed_test_malwares/malware_B
-                python find_wmd.py
+3- find word centroid distance between malware_lang_A and malware_class_1 ... malware_class_9
+    ---> run: python wcd.py parsed_test_malwares/malware_lang_A
+
