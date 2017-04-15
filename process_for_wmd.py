@@ -49,11 +49,10 @@ for filename in files:
     file = open(filename, "r")
     data = file.read()
     corpus.append(data)
-print("corpus: ")
-print(corpus)
 print("-----\n")
 
-vectorizer = CountVectorizer(min_df=1, vocabulary=vocabulary)
+pattern = re.compile('^[A-Za-z0-9]+(?:\\.[A-Za-z0-9]+)*', flags=re.M)
+vectorizer = CountVectorizer(min_df=1, vocabulary=vocabulary, analyzer=partial(tokenizer, pattern=pattern))
 vectorizer._validate_vocabulary()
 
 X = vectorizer.fit_transform(corpus)
