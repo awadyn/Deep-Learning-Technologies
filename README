@@ -1,3 +1,10 @@
+Dependencies:
+-------------
+install scipy, numpy, cvxpy, functools, sklearn, nlkt, tensorflow
+
+
+
+
 Document distance between malware_A and malware_B:
 --------------------------------------------------
 1-  parse malwares
