@@ -20,5 +20,3 @@ for malware_class in [1, 2, 3, 7, 8]:
     X.toarray()
 
     np.savetxt("malware_bows/malware_bow_" + str(malware_class), X.toarray())
-
-

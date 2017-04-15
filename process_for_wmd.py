@@ -219,7 +219,7 @@ for file in files:
     init = tf.global_variables_initializer()
   
   # Step 5: Begin training.
-  num_steps = 60001
+  num_steps = 40001
   
   with tf.Session(graph=graph) as session:
     # We must initialize all variables before we use them.

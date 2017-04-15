@@ -14,13 +14,6 @@ for root, dirs, filenames in os.walk(parsed_malwares_dir):
             for word in data:
                     total_words.append(word)
 
-#
-#for filename in sys.argv[1]:
-#        file = open(filename, "r")
-#        data = file.read().splitlines()
-#        for word in data:
-#                total_words.append(word)
-
 vocabulary = list(set(total_words))
 
 

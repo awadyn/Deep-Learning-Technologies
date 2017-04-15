@@ -1,73 +1,108 @@
-# Copyright 2015 The TensorFlow Authors. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ==============================================================================
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import numpy as np
 import collections
 import math
 import os
+import sys
 import random
 import zipfile
 
-import numpy as np
+from sklearn.feature_extraction.text import CountVectorizer
+from functools import partial
+from nltk import regexp_tokenize as tokenizer
+import re
+
 from six.moves import urllib
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-# Step 1: Download the data.
-url = 'http://mattmahoney.net/dc/'
 
 
-def maybe_download(filename, expected_bytes):
-  """Download a file if not present, and make sure it's the right size."""
-  if not os.path.exists(filename):
-    filename, _ = urllib.request.urlretrieve(url + filename, filename)
-  statinfo = os.stat(filename)
-  if statinfo.st_size == expected_bytes:
-    print('Found and verified', filename)
-  else:
-    print(statinfo.st_size)
-    raise Exception(
-        'Failed to verify ' + filename + '. Can you get to it with a browser?')
-  return filename
+print("\n\nWelcome...\n\n\n\n")
+print("To find the document distance between " + sys.argv[1] + " and known malwares:")
+print("----> Find BOW representations for " + sys.argv[1] + " and known malwares")
+print("----> Find word embeddings for " + sys.argv[1] + " and known malwares")
+print("----> Find cost of transforming every word in " + sys.argv[1] + " to every word in the known malwares")
+print("----> Find document distance by applying Word Centroid Distance algorithm\n\n\n\n")
 
-#for malware_class in [1, 2, 3, 7, 8]:
-for malware_class in [8]:
-  filename = 'parsed_test_malwares/malware_lang_' + str(malware_class) + '.zip'
+print("Let us begin...\n\n\n\n")
 
+
+
+
+# file containing all words in our vocabulary
+vocabulary_file = open("vocabulary", "r")
+vocabulary = list(set(vocabulary_file.read().splitlines()))
+vocabulary_size = len(vocabulary)
+
+# malware whose document distance from classified malwares we wish to measure
+test_malware = sys.argv[1]
+
+# classified/training malwares
+malware_dir = "parsed_malwares"
+malwares = []
+for root, dirs, filenames in os.walk(malware_dir):
+        malwares.append(test_malware)
+        for malware in filenames:
+                malwares.append(os.path.join(root, malware))
+
+
+
+
+print("finding BOW representations...")
+print("\n\n")
+
+
+corpus = []
+for malware in malwares:
+        data = open(malware, "r").read()
+        corpus.append(data)
+print("-----\n")
+
+pattern = re.compile('^[A-Za-z0-9]+(?:\\.[A-Za-z0-9]+)*', flags=re.M)
+vectorizer = CountVectorizer(min_df=1, vocabulary=vocabulary, analyzer=partial(tokenizer, pattern=pattern))
+vectorizer._validate_vocabulary()
+
+X = vectorizer.fit_transform(corpus)
+bows = X.toarray().astype(np.float32)
+
+# from BOW to nBOW
+for b in range(0, len(bows)):
+        for i in range(0, len(bows[b])):
+                bows[b][i] /= len(vocabulary)
+
+# bows: m x n matrix of nbow vectors, where m is the number
+# of malware classes + 1
+print(type(bows[0][0]))
+for bow in bows:
+        print(bow)
+        print("\n")
+print("-----\n\n\n\n")
+
+
+
+
+
+print("finding word embeddings...")
+print("\n\n")
+
+
+word_embeddings = []
+for malware in malwares:
+  
   # Read the data into a list of strings.
   def read_data(filename):
-    """Extract the first file enclosed in a zip file as a list of words"""
-    with zipfile.ZipFile(filename) as f:
-      data = tf.compat.as_str(f.read(f.namelist()[0])).split()
+    data = open(filename, "r").read().split()
     return data
+  words = read_data(malware)
   
-  words = read_data(filename)
-  print('Data size', len(words))
   
   # Step 2: Build the dictionary and replace rare words with UNK token.
-  # 82 assembly instructions, 16 registers, so do 82 * 16 * 17 and round up assuming there are constants
-  vocabulary_size = 1680
-  
-  
   def build_dataset(words):
     count = [['UNK', -1]]
-    # append word-frequency pairs to count list
-    # append only most common (vocabulary_size - 1) words
     most_common_size = len(collections.Counter(words).most_common(vocabulary_size - 1))
     count.extend(collections.Counter(words).most_common(vocabulary_size - 1))
     dictionary = dict()
@@ -82,32 +117,25 @@ for malware_class in [8]:
         index = 0  # dictionary['UNK']
         unk_count += 1
       data.append(index)
-    # some words in the text document are not part of the vocabulary
-    # the vocabulary may be smaller than the size of the text document
     count[0][1] = unk_count
     reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
     return data, count, dictionary, reverse_dictionary
   
-  # clarifications:
-  # data: list of word indices; size: vocabulary_size
-  # count: list of (<word>, <word_frequency>) tuples; size: vocabulary size
-  # dictionary: dictionary of <word>:<word_index> pairs; size: vocabulary size
-  # reverse_dictionary: reverse of dictionary
   data, count, dictionary, reverse_dictionary = build_dataset(words)
   del words  # Hint to reduce memory.
   print('Most common words (+UNK)', count[:5])
   print('Sample data', data[:10], [reverse_dictionary[i] for i in data[:10]])
+  print("-----")
   
+    
   data_index = 0
-  
-  
   # Step 3: Function to generate a training batch for t, reverse_dictionaryhe skip-gram model.
   def generate_batch(batch_size, num_skips, skip_window):
     global data_index
     assert batch_size % num_skips == 0
     assert num_skips <= 2 * skip_window
-    batch = np.ndarray(shape=(batch_size), dtype=np.int32)
-    labels = np.ndarray(shape=(batch_size, 1), dtype=np.int32)
+    batch = np.ndarray(shape=(batch_size), dtype=np.int64)
+    labels = np.ndarray(shape=(batch_size, 1), dtype=np.int64)
     span = 2 * skip_window + 1  # [ skip_window target skip_window ]
     buffer = collections.deque(maxlen=span)
     for _ in range(span):
@@ -135,8 +163,8 @@ for malware_class in [8]:
   
   # Step 4: Build and train a skip-gram model.
   
-  batch_size = 128
   embedding_size = 128  # Dimension of the embedding vector.
+  batch_size = 16
   skip_window = 4       # How many words to consider left and right.
   num_skips = 2         # How many times to reuse an input to generate a label.
   
@@ -147,7 +175,7 @@ for malware_class in [8]:
   valid_window = 100  # Only pick dev samples in the head of the distribution.
   valid_examples = np.random.choice(valid_window, valid_size, replace=False)
   num_sampled = 64    # Number of negative examples to sample.
-  
+
   graph = tf.Graph()
   
   global nce_weights
@@ -155,9 +183,9 @@ for malware_class in [8]:
   with graph.as_default():
   
     # Input data.
-    train_inputs = tf.placeholder(tf.int32, shape=[batch_size])
-    train_labels = tf.placeholder(tf.int32, shape=[batch_size, 1])
-    valid_dataset = tf.constant(valid_examples, dtype=tf.int32)
+    train_inputs = tf.placeholder(tf.int64, shape=[batch_size])
+    train_labels = tf.placeholder(tf.int64, shape=[batch_size, 1])
+    valid_dataset = tf.constant(valid_examples, dtype=tf.int64)
   
     # Ops and variables pinned to the CPU because of missing GPU implementation
     with tf.device('/cpu:0'):
@@ -171,6 +199,7 @@ for malware_class in [8]:
           tf.truncated_normal([vocabulary_size, embedding_size],
                               stddev=1.0 / math.sqrt(embedding_size)))
       nce_biases = tf.Variable(tf.zeros([vocabulary_size]))
+      print("\n\n\ntype(nce_weights)" + str(type(nce_weights)))
   
     # Compute the average NCE loss for the batch.
     # tf.nce_loss automatically draws a new sample of the negative labels each
@@ -198,13 +227,13 @@ for malware_class in [8]:
     init = tf.global_variables_initializer()
   
   # Step 5: Begin training.
-  num_steps = 20001
-  
+  num_steps = 10001
   with tf.Session(graph=graph) as session:
     # We must initialize all variables before we use them.
     init.run()
     print("Initialized")
-  
+    print("Finding word embeddings for " + malware)
+    print("-----\n")
     average_loss = 0
     for step in xrange(num_steps):
       batch_inputs, batch_labels = generate_batch(
@@ -215,7 +244,7 @@ for malware_class in [8]:
       # in the list of returned values for session.run()
       _, loss_val = session.run([optimizer, loss], feed_dict=feed_dict)
       average_loss += loss_val
-  
+ 
       if step % 2000 == 0:
         if step > 0:
           average_loss /= 2000
@@ -223,61 +252,56 @@ for malware_class in [8]:
         print("Average loss at step ", step, ": ", average_loss)
         average_loss = 0
   
-      # Note that this is expensive (~20% slowdown if computed every 500 steps)
-  #    if step % 10000 == 0:
-  #      sim = similarity.eval()
-  #      for i in xrange(valid_size):
-  #        valid_word = reverse_dictionary[valid_examples[i]]
-  #        top_k = 8  # number of nearest neighbors
-  #        nearest = (-sim[i, :]).argsort()[1:top_k + 1]
-  #        log_str = "Nearest to %s:" % valid_word
-  #        for k in xrange(top_k):
-  #          close_word = reverse_dictionary[nearest[k]]
-  #          log_str = "%s %s," % (log_str, close_word)
-  #        print(log_str)
     final_embeddings = normalized_embeddings.eval()
-  # Step 6: Visualize the embeddings.
-  
-  
-  def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
-    assert low_dim_embs.shape[0] >= len(labels), "More labels than embeddings"
-    plt.figure(figsize=(18, 18))  # in inches
-    for i, label in enumerate(labels):
-      x, y = low_dim_embs[i, :]
-      plt.scatter(x, y)
-      plt.annotate('',
-                   xy=(x, y),
-                   xytext=(5, 2),
-                   textcoords='offset points',
-                   ha='right',
-                   va='bottom')
-  
-    plt.savefig(filename)
-  
-  try:
-    from sklearn.manifold import TSNE
-    import matplotlib.pyplot as plt
-  
-    global idx
-    #tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
-    #if len(reverse_dictionary) < 500:
-    #  plot_only = len(reverse_dictionary)
-    #else:
-    #  plot_only = 500
-    #low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])
-    file_name = "malware_test_embeddings/malware_test_embeddings_" + str(malware_class)
-    np.savetxt(file_name, final_embeddings)
-    #labels = [reverse_dictionary[idx] for idx in xrange(plot_only)]
-    #plot_with_labels(low_dim_embs, labels)
-  
-  except ImportError:
-    print("Please install sklearn, matplotlib, and scipy to visualize embeddings.")
-  
-  except KeyError:
-          print("plot_only: ", plot_only)
-          print("idx: ", idx)
-          print("reverse_dictionary[idx - 1]", reverse_dictionary[idx - 1])
-          print("len(dictionary)", len(dictionary))
-          print("len(reverse_dictionary)", len(reverse_dictionary))
-          print("len(count): ", len(count))
-          print("count[idx]", count[idx])
+    word_embeddings.append(final_embeddings)
+
+print("word_embeddings:")
+for embedding in word_embeddings:
+        print(embedding)
+        print("\n")
+print("-----\n\n\n\n")
+
+
+
+
+
+print("finding word centroid distance...")
+print("\n\n")
+
+
+embedding_size = len(word_embeddings[0][0])
+print("size(word_embeddings[0]) = " + str(len(word_embeddings[0])) + " x " + str(embedding_size))
+
+for embedding in range(1, len(word_embeddings)):
+        print("Finding wcd between " + malwares[0] + " and " + malwares[embedding] + ":")
+        j = 0
+        k = 0
+        sum_1 = 0.0
+        sum_2 = 0.0
+        centroid_1 = []
+        centroid_2 = []
+        for k in range(0, embedding_size):
+                        for j in range(0, vocabulary_size):
+                                sum_1 += bows[0][j] * word_embeddings[0][j][k]
+                                sum_2 += bows[embedding][j] * word_embeddings[embedding][j][k]
+                        centroid_1.append(sum_1)
+                        centroid_2.append(sum_2)
+                        sum_1 = 0.0
+                        sum_2 = 0.0
+        #print(type(centroid_1))
+        #print(type(centroid_1[0]))
+        #print("centroid_1")
+        #print(centroid_1)
+        #print(type(centroid_2))
+        #print(type(centroid_2[0]))
+        #print("centroid_2")
+        #print(centroid_2)
+        #print("-----\n\n")
+        
+        distance = 0.0
+        for k in range(0, embedding_size):
+                distance += pow((centroid_2[k] - centroid_1[k]), 2)
+        
+        print("wcd = " + str(distance))
+
+
