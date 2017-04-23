@@ -1,0 +1,24 @@
+finding word centroid distance...
+
+
+
+size(word_embeddings[0]) = 6626 x 128
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_1:
+wcd = 54.7414820273
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_2:
+wcd = 0.906927416909
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_3:
+wcd = 24.7186273026
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_4:
+wcd = 24.984735566
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_5:
+wcd = 24.776571288
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_6:
+wcd = 24.823931239
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_7:
+wcd = 25.0698198532
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_8:
+wcd = 25.0299600386
+Finding wcd between parsed_test_malwares/malware_lang_2 and parsed_malwares/malware_lang_9:
+wcd = 25.4819733897
+

@@ -17,9 +17,9 @@ for root, dirs, filenames in os.walk(parsed_malwares_dir):
 vocabulary = list(set(total_words))
 
 
-print("len(vocabulary): " + str(len(vocabulary)))
 print("vocabulary:")
 print(vocabulary)
+print("len(vocabulary): " + str(len(vocabulary)))
 
 output_file = open("vocabulary", "w")
 for word in vocabulary:

@@ -21,14 +21,14 @@ import tensorflow as tf
 
 
 
-print("\n\nWelcome...\n\n\n\n")
+print("\n\nWelcome...\n\n")
 print("To find the document distance between " + sys.argv[1] + " and known malwares:")
 print("----> Find BOW representations for " + sys.argv[1] + " and known malwares")
 print("----> Find word embeddings for " + sys.argv[1] + " and known malwares")
 print("----> Find cost of transforming every word in " + sys.argv[1] + " to every word in the known malwares")
-print("----> Find document distance by applying Word Centroid Distance algorithm\n\n\n\n")
+print("----> Find document distance by applying Word Centroid Distance algorithm\n\n")
 
-print("Let us begin...\n\n\n\n")
+
 
 
 
@@ -41,13 +41,19 @@ vocabulary_size = len(vocabulary)
 # malware whose document distance from classified malwares we wish to measure
 test_malware = sys.argv[1]
 
+# specifies whether there is a need to find embeddings or not
+find_embeddings = sys.argv[2]
+
 # classified/training malwares
 malware_dir = "parsed_malwares"
+embeddings_dir = "malware_embeddings"
 malwares = []
 for root, dirs, filenames in os.walk(malware_dir):
         malwares.append(test_malware)
         for malware in filenames:
                 malwares.append(os.path.join(root, malware))
+
+
 
 
 
@@ -60,7 +66,6 @@ corpus = []
 for malware in malwares:
         data = open(malware, "r").read()
         corpus.append(data)
-print("-----\n")
 
 pattern = re.compile('^[A-Za-z0-9]+(?:\\.[A-Za-z0-9]+)*', flags=re.M)
 vectorizer = CountVectorizer(min_df=1, vocabulary=vocabulary, analyzer=partial(tokenizer, pattern=pattern))
@@ -76,11 +81,13 @@ for b in range(0, len(bows)):
 
 # bows: m x n matrix of nbow vectors, where m is the number
 # of malware classes + 1
-print(type(bows[0][0]))
-for bow in bows:
-        print(bow)
-        print("\n")
-print("-----\n\n\n\n")
+#print(type(bows[0][0]))
+#for bow in bows:
+#        print(bow)
+#        print("\n")
+#print("-----\n\n\n\n")
+
+
 
 
 
@@ -89,9 +96,22 @@ print("-----\n\n\n\n")
 print("finding word embeddings...")
 print("\n\n")
 
-
 word_embeddings = []
-for malware in malwares:
+
+# check flag
+if find_embeddings == "-embeddings":
+        malwares_for_embedding = malwares
+else:
+        if find_embeddings == "-no-embeddings":
+                # only find embeddings for test file
+                malwares_for_embedding = []
+                malwares_for_embedding.append(malwares[0])
+
+# find embeddings
+for malware in malwares_for_embedding:
+        # store name to save embeddings after generating them
+        malware_name = malware[malware.index('/') + 1 :]
+        
         # Step 1: Read the data into a list of strings.
         def read_data(filename):
                 data = open(filename, "r").read().split()
@@ -125,9 +145,9 @@ for malware in malwares:
         data, count, dictionary, reverse_dictionary = build_dataset(words)
         # Hint to reduce memory.
         del words
-        print('Most common words (+UNK)', count[:5])
-        print('Sample data', data[:10], [reverse_dictionary[i] for i in data[:10]])
-        print("-----\n")
+#        print('Most common words (+UNK)', count[:5])
+#        print('Sample data', data[:10], [reverse_dictionary[i] for i in data[:10]])
+#        print("-----\n")
         
 
         # Step 3: Function to generate a training batch
@@ -164,7 +184,7 @@ for malware in malwares:
 
         # Step 4: Build and train a skip-gram model.
         batch_size = 16
-        skip_window = 4         # How many words to consider left and right.
+        skip_window = 7         # How many words to consider left and right.
         num_skips = 2           # How many times to reuse an input to generate a label.
         embedding_size = 128    # Dimension of the embedding vector.
         # We pick a random validation set to sample nearest neighbors. Here we limit the
@@ -241,14 +261,22 @@ for malware in malwares:
                                 print("Average loss at step ", step, ": ", average_loss)
                                 average_loss = 0
                 final_embeddings = normalized_embeddings.eval()
+                np.savetxt(embeddings_dir + '/'+ malware_name + '.embeddings', final_embeddings)
                 word_embeddings.append(final_embeddings)
+                        
+if find_embeddings == '-no-embeddings':
+        for malware in malwares[1:]:
+                malware_name = malware[malware.index('/') + 1 :]
+                word_embeddings.append(np.loadtxt(embeddings_dir + '/' + malware_name + '.embeddings'))
 
 
-print("word_embeddings:")
-for embedding in word_embeddings:
-        print(embedding)
-        print("\n")
-print("-----\n\n\n\n")
+#print("word_embeddings:")
+#for embedding in word_embeddings:
+#        print(embedding)
+#        print("\n")
+#print("-----\n\n\n\n")
+
+
 
 
 
@@ -261,8 +289,10 @@ print("\n\n")
 embedding_size = len(word_embeddings[0][0])
 print("size(word_embeddings[0]) = " + str(len(word_embeddings[0])) + " x " + str(embedding_size))
 
+dist_file = open("distances/distances.log", "a")
+distances = []
 for embedding in range(1, len(word_embeddings)):
-        print("Finding wcd between " + malwares[0] + " and " + malwares[embedding] + ":")
+        print("wcd between " + malwares[0] + " and " + malwares[embedding] + ":")
         j = 0
         k = 0
         sum_1 = 0.0
@@ -280,7 +310,31 @@ for embedding in range(1, len(word_embeddings)):
         distance = 0.0
         for k in range(0, embedding_size):
                 distance += pow((centroid_2[k] - centroid_1[k]), 2)
+        distances.append(distance)
         
-        print("wcd = " + str(distance))
+        print(str(distance))
+        dist_file.write("wcd between " + malwares[0] + " and " + malwares[embedding] + "\n")
+        dist_file.write(str(distance))
+        dist_file.write("\n")
 
+
+
+
+
+print("finding malware classification...")
+print("\n\n")
+
+
+min_distance = distances[0]
+for distance in distances:
+        if distance < min_distance:
+                min_distance = distance
+
+print("classification: ")
+print(str(distances.index(min_distance) + 1))
+dist_file.write("\nclassification\n")
+dist_file.write(str(distances.index(min_distance) + 1))
+dist_file.write("\n\n\n\n")
+
+dist_file.close()
 
