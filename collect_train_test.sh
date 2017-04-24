@@ -32,7 +32,7 @@ do
 
         # copy files to directories
         echo "Copying ${TRAIN_SAMPLE_SIZE} train files to ${DESTINATION_TRAIN_DIR}/${class}"
-        for file in `ls ${SOURCE_DIR}/${class} | head -${TRAIN_SAMPLE_SIZE}`
+        for file in `ls ${SOURCE_DIR}/${class} | head -30 | tail -${TRAIN_SAMPLE_SIZE}`
         do
                 cp ${SOURCE_DIR}/${class}/${file} ${DESTINATION_TRAIN_DIR}/${class}
         done

@@ -1,0 +1,648 @@
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_1
+0.190213166203
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_2
+0.642428136062
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_3
+0.888089917231
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_4
+1.55891974202
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_5
+1.62422622826
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_6
+1.46509044077
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_7
+2.04000780027
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_8
+4.12147298639
+wcd between parsed_test_malwares/malware_lang_1_1 and parsed_malwares/malware_lang_9
+27.8674875389
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_1
+24.2388325691
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_2
+23.5945982912
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_3
+24.1618155285
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_4
+25.8272939791
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_5
+26.2251174288
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_6
+25.0417034076
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_7
+25.6816825239
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_8
+27.2511118939
+wcd between parsed_test_malwares/malware_lang_1_2 and parsed_malwares/malware_lang_9
+46.7093839834
+
+classification
+2
+
+
+
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_1
+6.61977148235
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_2
+6.91349670714
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_3
+7.3910517699
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_4
+8.06688240538
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_5
+9.00946280186
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_6
+7.37717349522
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_7
+8.95131953801
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_8
+10.2719980918
+wcd between parsed_test_malwares/malware_lang_1_3 and parsed_malwares/malware_lang_9
+34.437827818
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_1
+0.673982849531
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_2
+1.11993145554
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_3
+1.2166204776
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_4
+1.90146518742
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_5
+2.25644103338
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_6
+2.06036909918
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_7
+3.08865686673
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_8
+4.30875807898
+wcd between parsed_test_malwares/malware_lang_2_1 and parsed_malwares/malware_lang_9
+27.9753072858
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_1
+46.811376312
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_2
+45.9294517963
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_3
+47.1821664758
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_4
+47.1767391787
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_5
+52.2006732126
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_6
+48.9148903664
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_7
+48.2028248405
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_8
+49.5754013709
+wcd between parsed_test_malwares/malware_lang_2_2 and parsed_malwares/malware_lang_9
+69.9673858463
+
+classification
+2
+
+
+
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_1
+524.070466321
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_2
+521.607526746
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_3
+522.00368711
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_4
+525.586128476
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_5
+524.827367682
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_6
+523.98965579
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_7
+527.836114908
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_8
+535.680838544
+wcd between parsed_test_malwares/malware_lang_2_3 and parsed_malwares/malware_lang_9
+559.677987689
+
+classification
+2
+
+
+
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_1
+0.944606468352
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_2
+1.32720525504
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_3
+1.69527322133
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_4
+2.09623762962
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_5
+2.59648718228
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_6
+2.20513148168
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_7
+2.93919723144
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_8
+4.32954637197
+wcd between parsed_test_malwares/malware_lang_3_1 and parsed_malwares/malware_lang_9
+28.6244084312
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_1
+53.4715324813
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_2
+52.9211921325
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_3
+53.40714978
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_4
+54.4684709529
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_5
+55.3794404338
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_6
+53.7616515789
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_7
+55.0321276684
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_8
+59.6604814763
+wcd between parsed_test_malwares/malware_lang_3_2 and parsed_malwares/malware_lang_9
+88.5316419702
+
+classification
+2
+
+
+
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_1
+545.512475492
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_2
+544.048020077
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_3
+546.16516215
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_4
+549.581964903
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_5
+549.355589358
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_6
+542.905936051
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_7
+540.173969011
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_8
+545.252568117
+wcd between parsed_test_malwares/malware_lang_3_3 and parsed_malwares/malware_lang_9
+604.635861864
+
+classification
+7
+
+
+
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_1
+1.21959978192
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_2
+1.6381209211
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_3
+2.15537720407
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_4
+2.97523499028
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_5
+2.10988904961
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_6
+2.46097731541
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_7
+3.19895271148
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_8
+6.11589669879
+wcd between parsed_test_malwares/malware_lang_4_1 and parsed_malwares/malware_lang_9
+27.747838181
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_1
+53.3859292857
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_2
+53.3553997767
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_3
+53.3843700224
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_4
+54.4808796361
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_5
+53.5250551593
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_6
+56.8358330538
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_7
+54.6452779392
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_8
+56.9722878249
+wcd between parsed_test_malwares/malware_lang_4_2 and parsed_malwares/malware_lang_9
+72.9464689908
+
+classification
+2
+
+
+
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_1
+608.51430351
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_2
+607.5798194
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_3
+607.550502055
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_4
+604.776004654
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_5
+613.078496411
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_6
+612.936089382
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_7
+608.521221285
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_8
+611.943328913
+wcd between parsed_test_malwares/malware_lang_4_3 and parsed_malwares/malware_lang_9
+621.86072715
+
+classification
+4
+
+
+
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_1
+4.60090350793
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_2
+5.20272192384
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_3
+4.93553369857
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_4
+5.66291097148
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_5
+5.98122008273
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_6
+5.82436711925
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_7
+7.43747129132
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_8
+9.04567536656
+wcd between parsed_test_malwares/malware_lang_5_1 and parsed_malwares/malware_lang_9
+30.6816559436
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_1
+64.1675373634
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_2
+64.3833630129
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_3
+60.9341521347
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_4
+65.118211312
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_5
+62.6109795925
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_6
+63.4316973873
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_7
+66.2737258084
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_8
+67.185734221
+wcd between parsed_test_malwares/malware_lang_5_2 and parsed_malwares/malware_lang_9
+97.8098393764
+
+classification
+3
+
+
+
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_1
+670.54498394
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_2
+670.36222519
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_3
+668.140176527
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_4
+677.779545915
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_5
+677.845005986
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_6
+669.204762147
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_7
+668.482521232
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_8
+661.707085543
+wcd between parsed_test_malwares/malware_lang_5_3 and parsed_malwares/malware_lang_9
+704.680436038
+
+classification
+8
+
+
+
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_1
+26.9445442826
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_2
+27.2518245454
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_3
+26.5811980665
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_4
+27.1741700333
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_5
+30.235168776
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_6
+28.2582045381
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_7
+29.9538134429
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_8
+30.3207250564
+wcd between parsed_test_malwares/malware_lang_6_1 and parsed_malwares/malware_lang_9
+50.5709178348
+
+classification
+3
+
+
+
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_1
+96.9226167913
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_2
+98.0530566809
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_3
+98.5620442715
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_4
+98.8399422463
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_5
+103.265431054
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_6
+98.0640601124
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_7
+102.114018079
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_8
+100.066339394
+wcd between parsed_test_malwares/malware_lang_6_2 and parsed_malwares/malware_lang_9
+124.646610345
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_1
+763.634898884
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_2
+761.71242995
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_3
+763.175894705
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_4
+757.895110548
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_5
+770.823005319
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_6
+765.558557528
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_7
+767.430485844
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_8
+770.487345243
+wcd between parsed_test_malwares/malware_lang_6_3 and parsed_malwares/malware_lang_9
+807.146681435
+
+classification
+4
+
+
+
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_1
+24.4969548598
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_2
+25.8777744987
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_3
+25.0805814824
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_4
+25.6899905513
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_5
+25.0251312552
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_6
+26.0801740828
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_7
+26.73137112
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_8
+30.1097818675
+wcd between parsed_test_malwares/malware_lang_7_1 and parsed_malwares/malware_lang_9
+51.2056080284
+
+classification
+1
+
+
+
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_1
+106.24765491
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_2
+107.304128038
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_3
+107.985647042
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_4
+111.219567263
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_5
+105.387709027
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_6
+104.992088278
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_7
+110.974118205
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_8
+106.971648331
+wcd between parsed_test_malwares/malware_lang_7_2 and parsed_malwares/malware_lang_9
+121.513431183
+
+classification
+6
+
+
+
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_1
+735.295980148
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_2
+731.040696924
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_3
+728.909342624
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_4
+737.100773601
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_5
+744.481646716
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_6
+729.678149827
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_7
+744.39459114
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_8
+727.606726857
+wcd between parsed_test_malwares/malware_lang_7_3 and parsed_malwares/malware_lang_9
+762.077587263
+
+classification
+8
+
+
+
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_1
+37.2797079373
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_2
+37.8328686038
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_3
+38.1705509714
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_4
+37.2444144356
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_5
+39.510521531
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_6
+36.7221141486
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_7
+39.9793143338
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_8
+41.5687736373
+wcd between parsed_test_malwares/malware_lang_8_1 and parsed_malwares/malware_lang_9
+64.5265285525
+
+classification
+6
+
+
+
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_1
+155.944725948
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_2
+155.090565404
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_3
+153.208671362
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_4
+156.654883727
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_5
+156.36103367
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_6
+153.310645015
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_7
+153.880182527
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_8
+161.625769579
+wcd between parsed_test_malwares/malware_lang_8_2 and parsed_malwares/malware_lang_9
+180.273482397
+
+classification
+3
+
+
+
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_1
+812.654123855
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_2
+817.234432516
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_3
+816.554881583
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_4
+812.865661237
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_5
+812.790611338
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_6
+812.816949081
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_7
+801.045503392
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_8
+812.989925644
+wcd between parsed_test_malwares/malware_lang_8_3 and parsed_malwares/malware_lang_9
+896.914756691
+
+classification
+7
+
+
+
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_1
+156.160921959
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_2
+155.43773518
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_3
+157.197718992
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_4
+154.768283306
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_5
+160.374183869
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_6
+157.547255868
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_7
+155.295351618
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_8
+164.198692672
+wcd between parsed_test_malwares/malware_lang_9_1 and parsed_malwares/malware_lang_9
+190.782333516
+
+classification
+4
+
+
+
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_1
+190.675819839
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_2
+191.575765936
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_3
+192.70943097
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_4
+192.829487768
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_5
+191.934669637
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_6
+193.712412485
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_7
+189.59509673
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_8
+188.110542531
+wcd between parsed_test_malwares/malware_lang_9_2 and parsed_malwares/malware_lang_9
+221.35683539
+
+classification
+8
+
+
+
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_1
+919.86784307
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_2
+918.580163309
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_3
+928.717232318
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_4
+927.254564346
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_5
+918.421117078
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_6
+920.828564964
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_7
+914.827933217
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_8
+933.575518323
+wcd between parsed_test_malwares/malware_lang_9_3 and parsed_malwares/malware_lang_9
+924.140977537
+
+classification
+7
+
+
+

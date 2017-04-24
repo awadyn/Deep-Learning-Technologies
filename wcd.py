@@ -82,10 +82,12 @@ for b in range(0, len(bows)):
 # bows: m x n matrix of nbow vectors, where m is the number
 # of malware classes + 1
 #print(type(bows[0][0]))
-#for bow in bows:
+print("nBOW non-zero elements:")
+for bow in bows:
+        print(len(np.nonzero(bow)[0]))
 #        print(bow)
 #        print("\n")
-#print("-----\n\n\n\n")
+print("-----\n\n")
 
 
 
@@ -184,7 +186,7 @@ for malware in malwares_for_embedding:
 
         # Step 4: Build and train a skip-gram model.
         batch_size = 16
-        skip_window = 7         # How many words to consider left and right.
+        skip_window = 10         # How many words to consider left and right.
         num_skips = 2           # How many times to reuse an input to generate a label.
         embedding_size = 128    # Dimension of the embedding vector.
         # We pick a random validation set to sample nearest neighbors. Here we limit the
@@ -238,7 +240,7 @@ for malware in malwares_for_embedding:
         
 
         # Step 5: Begin training.
-        num_steps = 40001
+        num_steps = 50001
         with tf.Session(graph=graph) as session:
                 # We must initialize all variables before we use them.
                 init.run()

@@ -19,11 +19,11 @@ then
 fi
 if [ -d "parsed_test_malwares" ]
 then
-        rm "temp_parsed_malwares/"*
+        rm "parsed_test_malwares/"*
 fi
 if [ -d "temp_parsed_malwares" ]
 then
-        rm "parsed_test_malwares/"*
+        rm "temp_parsed_malwares/"*
 fi
 if [ -d "temp_parsed_test_malwares" ]
 then
@@ -43,7 +43,7 @@ do
         INPUT_TRAIN_DIR="malware_by_class/${MALWARE_CLASS}"
         OUTPUT_TRAIN_FILE="temp_parsed_malwares/malware_lang_temp"
         FINAL_OUTPUT_TRAIN_FILE="parsed_malwares/malware_lang_${MALWARE_CLASS}"
-        
+
         COUNTER=1
         for file in "${INPUT_TRAIN_DIR}/"*.asm;
         do
@@ -63,9 +63,19 @@ do
                 tr -s " " < "${TEMP_FILE}_${COUNTER}" > "${OUTPUT_TRAIN_FILE}_${COUNTER}"
                 sed -i -e 's/^[ \t]*//;s/[ \t]*$//; s/, /./g; s/ /./g; s/eax/gpr/g; s/ebx/gpr/g; s/ecx/gpr/g; s/edx/gpr/g; s/edi/gpr/g; s/esi/gpr/g; s/\[.*\(ebp\).*\]/\1/; s/\[.*\(esp\).*\]/\1/; s/\[.*\(gpr\).*\]/\1/; s/call.*/call/g' "${OUTPUT_TRAIN_FILE}_${COUNTER}"
         
+                # let's not append them
                 cat "${OUTPUT_TRAIN_FILE}_${COUNTER}" >> "${FINAL_OUTPUT_TRAIN_FILE}"
                 echo "done..."
         
+                #parsed_len=`wc -l ${OUTPUT_TRAIN_FILE}_${COUNTER} | tr -s " " | cut -f2 -d " "`
+                #max_len=100000
+                #if [ "${parsed_len}" -gt "${max_len}" ]
+                #then
+                #        echo "found file with good length..."
+                #        echo ${len}
+                #        head -100000 ${OUTPUT_TRAIN_FILE}_${COUNTER} | cat >> "${FINAL_OUTPUT_TRAIN_FILE}_${COUNTER}"
+                #fi
+
                 # clean up
                 rm "${TEMP_FILE}_${COUNTER}" 2>> "${LOG_FILE}"
                 rm "${TEMP_FILE}_${COUNTER}-e" 2>> "${LOG_FILE}"
