@@ -7,16 +7,13 @@ then
 fi
 
 
+./preprocess_for_tests_k_nn.sh
+
 for file in `ls parsed_train_malwares`
 do
         # choose test malware
         echo "Choosing test malware ${file}"
         mv parsed_train_malwares/"${file}" parsed_test_malwares/
-        echo
-        echo
-        # preprocess train malwares, isolating similar size malwares
-        echo "Preprocessing train malwares"
-        ./preprocess_for_test.sh "parsed_test_malwares/${file}"
         echo
         echo
         # running classification
@@ -30,3 +27,4 @@ do
         echo
         echo
 done
+
