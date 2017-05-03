@@ -1,0 +1,1131 @@
+>>> for test_class in range(1, 10):
+...     malware_test_doc = 'parsed_test_malwares/malware_lang_' + str(test_class) + '_1'
+...     vocabulary = []
+...     vocabulary.append(list(set(open(malware_test_doc, 'r').read().splitlines())))
+...     for malware in malware_docs:
+...             vocabulary.append(list(set(malware_docs[malware])))
+...     model = gensim.models.Word2Vec(vocabulary, min_count=1)
+...     for malware_class in range(1, 10):
+...             sum = 0.0
+...             for i in range(1, 3):
+...                     distance = model.wmdistance(malware_docs['malware_lang_' + str(malware_class) + '_' + str(i)], open(malware_test_doc, 'r').read().splitlines())
+...                     print('malware_lang_' + str(malware_class) + '_' + str(i) + ' --> ' + malware_test_doc + ' = ' + str(distance))
+...                     sum = sum + distance
+...             average = sum / 2.0
+...             print('average distance = ' + str(average) + '\n')
+...     print('\n\n\n')
+... 
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0196801692559
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0176108071001
+average distance = 0.018645488178
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0185341906542
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0149075172129
+average distance = 0.0167208539335
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_1_1 = 0.021055673361
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0199270194083
+average distance = 0.0204913463846
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0240380158569
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0364047828952
+average distance = 0.0302213993761
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0213660560621
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0212380570003
+average distance = 0.0213020565312
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0123483009134
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_1_1 = 0.03771611268
+average distance = 0.0250322067967
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0222932927784
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0218285361222
+average distance = 0.0220609144503
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0275988586703
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_1_1 = 0.014381323019
+average distance = 0.0209900908447
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0189613524193
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0263182971088
+average distance = 0.022639824764
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0260468528681
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0253114684752
+average distance = 0.0256791606717
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0241946180906
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0237356623254
+average distance = 0.023965140208
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0329238389421
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0323475940308
+average distance = 0.0326357164865
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0327625380826
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0383354065972
+average distance = 0.0355489723399
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0299511325548
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0295425190015
+average distance = 0.0297468257781
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0270164014998
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0392894402862
+average distance = 0.033152920893
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0332341065901
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0327698627707
+average distance = 0.0330019846804
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0323954875147
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0272122729135
+average distance = 0.0298038802141
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0304543599689
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0325773348975
+average distance = 0.0315158474332
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0258444010741
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_3_1 = 0.025043720999
+average distance = 0.0254440610365
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0239551567619
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0234717479951
+average distance = 0.0237134523785
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0325497225019
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0319794364811
+average distance = 0.0322645794915
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0325253324778
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0382965966359
+average distance = 0.0354109645569
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0296952677365
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0293077762368
+average distance = 0.0295015219866
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0267561576432
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0392409463814
+average distance = 0.0329985520123
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0329389710416
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0324768974849
+average distance = 0.0327079342632
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0323338187413
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0269621358858
+average distance = 0.0296479773135
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0302607089922
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0323910001204
+average distance = 0.0313258545563
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0258535882899
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0250452878137
+average distance = 0.0254494380518
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0239639857533
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0235026959645
+average distance = 0.0237333408589
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0326035793333
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0320297554967
+average distance = 0.032316667415
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0325158949525
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0376880665879
+average distance = 0.0351019807702
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0296804848745
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0292813514473
+average distance = 0.0294809181609
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0268087287951
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0391753425458
+average distance = 0.0329920356704
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0330157071606
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0325536099548
+average distance = 0.0327846585577
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0323378182899
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0270538554433
+average distance = 0.0296958368666
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0302843943012
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0324137816031
+average distance = 0.0313490879522
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_5_1 = 0.025769908772
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0249828326187
+average distance = 0.0253763706954
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0239154770467
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0234561223199
+average distance = 0.0236857996833
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0324743929549
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0319320906576
+average distance = 0.0322032418062
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0324326424729
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0372620567872
+average distance = 0.0348473496301
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0295896560393
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0291929378712
+average distance = 0.0293912969552
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0267366343408
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0390191020589
+average distance = 0.0328778681998
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0328991762476
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0324376683102
+average distance = 0.0326684222789
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0322398195171
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0269967709356
+average distance = 0.0296182952263
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0301639151872
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0323330405243
+average distance = 0.0312484778558
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0242873072958
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0229224970787
+average distance = 0.0236049021873
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0223757246875
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_6_1 = 0.021374741006
+average distance = 0.0218752328467
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_6_1 = 0.031103030903
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0305167568029
+average distance = 0.0308098938529
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0308986676216
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0371229202352
+average distance = 0.0340107939284
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0278303767834
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0275419159053
+average distance = 0.0276861463444
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0238000691064
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_6_1 = 0.03882599891
+average distance = 0.0313130340082
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_6_1 = 0.03178653791
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0313103137012
+average distance = 0.0315484258056
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0314684406877
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_6_1 = 0.024707469883
+average distance = 0.0280879552853
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0282779823408
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0306384858239
+average distance = 0.0294582340823
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0242642667628
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_7_1 = 0.0228594518838
+average distance = 0.0235618593233
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0223909473556
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_7_1 = 0.0213044891808
+average distance = 0.0218477182682
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0309785548018
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_7_1 = 0.030389482633
+average distance = 0.0306840187174
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0308062063323
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_7_1 = 0.037131039649
+average distance = 0.0339686229906
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0277459925453
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_7_1 = 0.027500961531
+average distance = 0.0276234770382
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0237542515159
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_7_1 = 0.0388395803771
+average distance = 0.0312969159465
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_7_1 = 0.03165836818
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_7_1 = 0.0311803357133
+average distance = 0.0314193519467
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0314945047426
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_7_1 = 0.024639061155
+average distance = 0.0280667829488
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0281946265827
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_7_1 = 0.030561166554
+average distance = 0.0293778965683
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0241183806899
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0226603677138
+average distance = 0.0233893742019
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0215978594518
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_8_1 = 0.02078239922
+average distance = 0.0211901293359
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0309212691869
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0303401160342
+average distance = 0.0306306926105
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0307197544878
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0370055040908
+average distance = 0.0338626292893
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0269745714457
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0268544204862
+average distance = 0.026914495966
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0236169674214
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0386916882478
+average distance = 0.0311543278346
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_8_1 = 0.031662335428
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0311866170237
+average distance = 0.0314244762258
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_8_1 = 0.030316324845
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_8_1 = 0.0241827062271
+average distance = 0.027249515536
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_8_1 = 0.0276020030492
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_8_1 = 0.030409211965
+average distance = 0.0290056075071
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0237329559315
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_9_1 = 0.0222200511395
+average distance = 0.0229765035355
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0212641494831
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_9_1 = 0.0204489449775
+average distance = 0.0208565472303
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0307206455748
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_9_1 = 0.0300983505126
+average distance = 0.0304094980437
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0304951174927
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_9_1 = 0.0369941291704
+average distance = 0.0337446233315
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0266950385292
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_9_1 = 0.026513930874
+average distance = 0.0266044847016
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0232639875369
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_9_1 = 0.0386680190477
+average distance = 0.0309660032923
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0315898284169
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_9_1 = 0.0311164363426
+average distance = 0.0313531323798
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_9_1 = 0.030193010021
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_9_1 = 0.023855000599
+average distance = 0.02702400531
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_9_1 = 0.0271576715716
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_9_1 = 0.029791506067
+average distance = 0.0284745888193
+
+
+
+
+
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> for malware_class in range(1, 10):
+...     for i in range(1, 5):
+...     
+... 
+  File "<stdin>", line 4
+    
+    ^
+IndentationError: expected an indented block
+>>> malware_docs = dict()
+>>> for malware_class in range(1, 10):
+...     for i in range(1, 5):
+...             malware_docs['malware_lang_' + str(malware_class) + '_' + str(i)] = open('parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(i), 'r').read().striplines()
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+AttributeError: 'str' object has no attribute 'striplines'
+>>> for malware_class in range(1, 10):
+...     for i in range(1, 5):                                                                                                                                                        ...             malware_docs['malware_lang_' + str(malware_class) + '_' + str(i)] = open('parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(i), 'r').read().splitlines()
+... 
+>>> for test_class in range(1, 10):
+...     malware_test_doc = 'parsed_test_malwares/malware_lang_' + str(test_class) + '_1'
+...     vocabulary = []
+...     vocabulary.append(list(set(open(malware_test_doc, 'r').read().splitlines())))
+...     for malware in malware_docs:
+...             vocabulary.append(list(set(malware_docs[malware])))
+...     model = gensim.models.Word2Vec(vocabulary, min_count=1)
+...     for malware_class in range(1, 10):
+...             sum = 0.0
+...             for i in range(1, 3):
+...                     distance = model.wmdistance(malware_docs['malware_lang_' + str(malware_class) + '_' + str(i)], open(malware_test_doc, 'r').read().splitlines())
+...                     print('malware_lang_' + str(malware_class) + '_' + str(i) + ' --> ' + malware_test_doc + ' = ' + str(distance))
+...                     sum = sum + distance
+...             average = sum / 4.0
+...             print('average distance = ' + str(average) + '\n')
+...     print('\n\n\n')
+... 
+^CTraceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+  File "/Users/lanaawad/Desktop/TensorFlow/lib/python2.7/site-packages/gensim/models/word2vec.py", line 1214, in wmdistance
+    return self.wv.wmdistance(document1, document2)
+  File "/Users/lanaawad/Desktop/TensorFlow/lib/python2.7/site-packages/gensim/models/keyedvectors.py", line 410, in wmdistance
+    distance_matrix[i, j] = sqrt(np_sum((self[t1] - self[t2])**2))
+KeyboardInterrupt
+>>> for test_class in range(1, 10):
+...     malware_test_doc = 'parsed_test_malwares/malware_lang_' + str(test_class) + '_1'
+...     vocabulary = []
+...     vocabulary.append(list(set(open(malware_test_doc, 'r').read().splitlines())))
+...     for malware in malware_docs:
+...             vocabulary.append(list(set(malware_docs[malware])))
+...     model = gensim.models.Word2Vec(vocabulary, min_count=1)
+...     for malware_class in range(1, 10):
+...             sum = 0.0
+...             for i in range(1, 5):
+...                     distance = model.wmdistance(malware_docs['malware_lang_' + str(malware_class) + '_' + str(i)], open(malware_test_doc, 'r').read().splitlines())
+...                     print('malware_lang_' + str(malware_class) + '_' + str(i) + ' --> ' + malware_test_doc + ' = ' + str(distance))
+...                     sum = sum + distance
+...             average = sum / 4.0
+...             print('average distance = ' + str(average) + '\n')
+...     print('\n\n\n')
+... 
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0200708905757
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0179570251676
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_1_1 = 0.00877586430688
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0169428971514
+average distance = 0.0159366693004
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0189296157828
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0152003800635
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0321945476662
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_1_1 = 0.014163857736
+average distance = 0.0201221003121
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0215690554492
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0204177469481
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0197839246549
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0207982534878
+average distance = 0.020642245135
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0245859907253
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_1_1 = 0.037253602992
+malware_lang_4_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0351795961513
+malware_lang_4_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0261451227787
+average distance = 0.0307910781618
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_1_1 = 0.021905732504
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0217544163991
+malware_lang_5_3 --> parsed_test_malwares/malware_lang_1_1 = inf
+malware_lang_5_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0370983620205
+average distance = inf
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0126179399609
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0384855721233
+malware_lang_6_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0383160478555
+malware_lang_6_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0384157121833
+average distance = 0.0319588180308
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0228484785143
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0223786671958
+malware_lang_7_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0225747748564
+malware_lang_7_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0298158820178
+average distance = 0.0244044506461
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0282830616106
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_1_1 = 0.0147500822223
+malware_lang_8_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0284337474941
+malware_lang_8_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0280774076732
+average distance = 0.0248860747501
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_1_1 = 0.0193806509653
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_1_1 = 0.026971977343
+malware_lang_9_3 --> parsed_test_malwares/malware_lang_1_1 = 0.0232829892934
+malware_lang_9_4 --> parsed_test_malwares/malware_lang_1_1 = 0.0188546328308
+average distance = 0.0221225626081
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0268587769431
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0260971984997
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0257852113542
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0294501131241
+average distance = 0.0270478249803
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0249328454347
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0245146385986
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0195290547737
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0252401225481
+average distance = 0.0235541653388
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0341848651101
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0335327834051
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0327722459864
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0338263519789
+average distance = 0.0335790616201
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0337557679897
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0393640433733
+malware_lang_4_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0371692452907
+malware_lang_4_4 --> parsed_test_malwares/malware_lang_2_1 = 0.034479860374
+average distance = 0.0361922292569
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0309471706837
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0304985079187
+malware_lang_5_3 --> parsed_test_malwares/malware_lang_2_1 = inf
+malware_lang_5_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0389468215947
+average distance = inf
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0280215262915
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0403040341725
+malware_lang_6_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0398732974535
+malware_lang_6_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0400807985054
+average distance = 0.0370699141057
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0344560852081
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0339875093495
+malware_lang_7_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0342615620351
+malware_lang_7_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0351876909399
+average distance = 0.0344732118831
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0334872872264
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_2_1 = 0.0281937560862
+malware_lang_8_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0333550855223
+malware_lang_8_4 --> parsed_test_malwares/malware_lang_2_1 = 0.03352317902
+average distance = 0.0321398269637
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_2_1 = 0.0314754943689
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_2_1 = 0.033723807363
+malware_lang_9_3 --> parsed_test_malwares/malware_lang_2_1 = 0.0336694136889
+malware_lang_9_4 --> parsed_test_malwares/malware_lang_2_1 = 0.0304843488073
+average distance = 0.032338266057
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0266176445471
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0257974633024
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_3_1 = 0.025513844455
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0291585950913
+average distance = 0.026771886849
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0246396790941
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0242138208795
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_3_1 = 0.0196352625359
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0249201361
+average distance = 0.0233522246524
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0337634939499
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0331414334849
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_3_1 = 0.0323704986077
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0333996790687
+average distance = 0.0331687762778
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_3_1 = 0.03349481147
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0392766683752
+malware_lang_4_3 --> parsed_test_malwares/malware_lang_3_1 = 0.0370837301222
+malware_lang_4_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0342466163193
+average distance = 0.0360254565717
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0306454314625
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0302275503497
+malware_lang_5_3 --> parsed_test_malwares/malware_lang_3_1 = inf
+malware_lang_5_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0388680056501
+average distance = inf
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0277521653522
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0402067875987
+malware_lang_6_3 --> parsed_test_malwares/malware_lang_3_1 = 0.0397799603507
+malware_lang_6_4 --> parsed_test_malwares/malware_lang_3_1 = 0.039984205655
+average distance = 0.0369307797392
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0341822868267
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0337126859329
+malware_lang_7_3 --> parsed_test_malwares/malware_lang_3_1 = 0.0339864883378
+malware_lang_7_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0351108163586
+average distance = 0.034248069364
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0333546773707
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0279293836284
+malware_lang_8_3 --> parsed_test_malwares/malware_lang_3_1 = 0.0332529315531
+malware_lang_8_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0333875634302
+average distance = 0.0319811389956
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_3_1 = 0.0312569178682
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_3_1 = 0.0334766382967
+malware_lang_9_3 --> parsed_test_malwares/malware_lang_3_1 = 0.033406305885
+malware_lang_9_4 --> parsed_test_malwares/malware_lang_3_1 = 0.0302031592692
+average distance = 0.0320857553298
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0265940276302
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0258037711312
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0255177354758
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0291666789752
+average distance = 0.0267705533031
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0246767371713
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0242423783893
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0197968729256
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0249395258415
+average distance = 0.0234138785819
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0337673222158
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0331609177738
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0323435374942
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0334120005332
+average distance = 0.0331709445043
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0334669310025
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0386854956797
+malware_lang_4_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0370270129428
+malware_lang_4_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0342536978256
+average distance = 0.0358582843627
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0306360887182
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0301929885749
+malware_lang_5_3 --> parsed_test_malwares/malware_lang_4_1 = inf
+malware_lang_5_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0385876083327
+average distance = inf
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0277560402454
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0401353222242
+malware_lang_6_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0397092785568
+malware_lang_6_4 --> parsed_test_malwares/malware_lang_4_1 = 0.039907755077
+average distance = 0.0368770990259
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_4_1 = 0.034141098384
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_4_1 = 0.03367394413
+malware_lang_7_3 --> parsed_test_malwares/malware_lang_4_1 = 0.033946517748
+malware_lang_7_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0351123045633
+average distance = 0.0342184662063
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0334130671012
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0279855088762
+malware_lang_8_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0332966641947
+malware_lang_8_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0334452817232
+average distance = 0.0320351304738
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_4_1 = 0.0312633515186
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_4_1 = 0.0335144834152
+malware_lang_9_3 --> parsed_test_malwares/malware_lang_4_1 = 0.0334487169014
+malware_lang_9_4 --> parsed_test_malwares/malware_lang_4_1 = 0.0302484745828
+average distance = 0.0321187566045
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0266066629963
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0257949793202
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_5_1 = 0.0255558724089
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0291651560908
+average distance = 0.026780667704
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0246864448877
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0242656843735
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_5_1 = 0.0199173732264
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0249483057557
+average distance = 0.0234544520608
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0337969074976
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0332197709099
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_5_1 = 0.032409463401
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0334461261899
+average distance = 0.0332180669996
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0335096609342
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0384003448264
+malware_lang_4_3 --> parsed_test_malwares/malware_lang_5_1 = 0.0369603562477
+malware_lang_4_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0342808588595
+average distance = 0.0357878052169
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0306631704487
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0302234572218
+malware_lang_5_3 --> parsed_test_malwares/malware_lang_5_1 = inf
+malware_lang_5_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0381417701195
+average distance = inf
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0278120485796
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0400835969366
+malware_lang_6_3 --> parsed_test_malwares/malware_lang_5_1 = 0.0396324187672
+malware_lang_6_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0398311727192
+average distance = 0.0368398092507
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0342100330215
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0337408633841
+malware_lang_7_3 --> parsed_test_malwares/malware_lang_5_1 = 0.034016821837
+malware_lang_7_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0350608130994
+average distance = 0.0342571328355
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0333861377782
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_5_1 = 0.0280798688088
+malware_lang_8_3 --> parsed_test_malwares/malware_lang_5_1 = 0.0332556478806
+malware_lang_8_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0334197273422
+average distance = 0.0320353454525
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_5_1 = 0.0312547968199
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_5_1 = 0.033519769417
+malware_lang_9_3 --> parsed_test_malwares/malware_lang_5_1 = 0.0334901475852
+malware_lang_9_4 --> parsed_test_malwares/malware_lang_5_1 = 0.0303127351993
+average distance = 0.0321443622554
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0250160264114
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0236294546325
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0228396780787
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_6_1 = 0.0271054885012
+average distance = 0.024647661906
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0230740773525
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_6_1 = 0.022094488945
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0209719826488
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_6_1 = 0.0224146207059
+average distance = 0.022138792413
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0323577895027
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0317097769746
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0308452239951
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_6_1 = 0.031965143814
+average distance = 0.0317194835716
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0318742658396
+malware_lang_4_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0382200418457
+malware_lang_4_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0365092385458
+malware_lang_4_4 --> parsed_test_malwares/malware_lang_6_1 = 0.0326398272832
+average distance = 0.0348108433786
+
+malware_lang_5_1 --> parsed_test_malwares/malware_lang_6_1 = 0.028825422787
+malware_lang_5_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0284923994446
+malware_lang_5_3 --> parsed_test_malwares/malware_lang_6_1 = inf
+malware_lang_5_4 --> parsed_test_malwares/malware_lang_6_1 = 0.037933520525
+average distance = inf
+
+malware_lang_6_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0247602834429
+malware_lang_6_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0398571143964
+malware_lang_6_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0393933832534
+malware_lang_6_4 --> parsed_test_malwares/malware_lang_6_1 = 0.0396133410577
+average distance = 0.0359060305376
+
+malware_lang_7_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0330405957561
+malware_lang_7_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0325589822933
+malware_lang_7_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0328511469774
+malware_lang_7_4 --> parsed_test_malwares/malware_lang_6_1 = 0.0343990028321
+average distance = 0.0332124319647
+
+malware_lang_8_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0326278994129
+malware_lang_8_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0256762756982
+malware_lang_8_3 --> parsed_test_malwares/malware_lang_6_1 = 0.03274196221
+malware_lang_8_4 --> parsed_test_malwares/malware_lang_6_1 = 0.032645470378
+average distance = 0.0309229019248
+
+malware_lang_9_1 --> parsed_test_malwares/malware_lang_6_1 = 0.0292906268194
+malware_lang_9_2 --> parsed_test_malwares/malware_lang_6_1 = 0.0317271128664
+malware_lang_9_3 --> parsed_test_malwares/malware_lang_6_1 = 0.0316543041675
+malware_lang_9_4 --> parsed_test_malwares/malware_lang_6_1 = 0.0284024889162
+average distance = 0.0302686331924
+
+
+
+
+
+malware_lang_1_1 --> parsed_test_malwares/malware_lang_7_1 = 0.024896965097
+malware_lang_1_2 --> parsed_test_malwares/malware_lang_7_1 = 0.0234710947995
+malware_lang_1_3 --> parsed_test_malwares/malware_lang_7_1 = 0.0226791905552
+malware_lang_1_4 --> parsed_test_malwares/malware_lang_7_1 = 0.0268738157405
+average distance = 0.024480266548
+
+malware_lang_2_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0229964803021
+malware_lang_2_2 --> parsed_test_malwares/malware_lang_7_1 = 0.021919715867
+malware_lang_2_3 --> parsed_test_malwares/malware_lang_7_1 = 0.0209670927551
+malware_lang_2_4 --> parsed_test_malwares/malware_lang_7_1 = 0.0222104602389
+average distance = 0.0220234372908
+
+malware_lang_3_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0321302345783
+malware_lang_3_2 --> parsed_test_malwares/malware_lang_7_1 = 0.0315037439283
+malware_lang_3_3 --> parsed_test_malwares/malware_lang_7_1 = 0.0306354367373
+malware_lang_3_4 --> parsed_test_malwares/malware_lang_7_1 = 0.0317340579204
+average distance = 0.0315008682911
+
+malware_lang_4_1 --> parsed_test_malwares/malware_lang_7_1 = 0.0316623877046
+^C^C^CTraceback (most recent call last):
+  File "<stdin>", line 11, in <module>
+  File "/Users/lanaawad/Desktop/TensorFlow/lib/python2.7/site-packages/gensim/models/word2vec.py", line 1214, in wmdistance
+    return self.wv.wmdistance(document1, document2)
+  File "/Users/lanaawad/Desktop/TensorFlow/lib/python2.7/site-packages/gensim/models/keyedvectors.py", line 430, in wmdistance
+    return emd(d1, d2, distance_matrix)
+KeyboardInterrupt
+>>> 
+>>> 
+>>> 
+>>> vocabulary = []
+>>> for malware_class in range(1, 6):
+...     for instance in range(1, 6)
+  File "<stdin>", line 2
+    for instance in range(1, 6)
+                              ^
+SyntaxError: invalid syntax
+>>> 
+>>> for malware_class in range(1, 10):
+...     for instance in range(1, 6):
+...     
+... 
+  File "<stdin>", line 4
+    
+    ^
+IndentationError: expected an indented block
+>>> for malware_class in range(1, 10):
+...     for instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(instance)
+...             malware_words = open(malware_name, "r").read().splitlines()
+...             vocabulary.append(malware_words)
+... 
+>>> len(vocabulary)
+45
+>>> len(vocabulary[0])
+6543
+>>> len(vocabulary[1])
+99704
+>>> 
+>>> malware_test_name = 'parsed_test_malwares/malware_lang_1_1'
+>>> malware_test_words = open(malware_test_name, "r").read().splitlines()
+>>> vocabulary.append(malware_test_words)
+>>> 
+>>> malware_train_docs = dict()
+>>> for malware_class in range(1, 10):
+...     for instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(instance)
+...             malware_docs[malware_name] = open(malware_name, "r").read().splitlines()
+... 
+>>> malware_docs.keys()
+['parsed_train_malwares/malware_lang_1_1', 'parsed_train_malwares/malware_lang_1_3', 'parsed_train_malwares/malware_lang_1_2', 'parsed_train_malwares/malware_lang_1_5', 'parsed_train_malwares/malware_lang_1_4', 'parsed_train_malwares/malware_lang_5_1', 'parsed_train_malwares/malware_lang_6_2', 'parsed_train_malwares/malware_lang_6_3', 'parsed_train_malwares/malware_lang_6_1', 'parsed_train_malwares/malware_lang_5_3', 'parsed_train_malwares/malware_lang_6_4', 'parsed_train_malwares/malware_lang_6_5', 'parsed_train_malwares/malware_lang_7_3', 'parsed_train_malwares/malware_lang_7_2', 'parsed_train_malwares/malware_lang_7_1', 'parsed_train_malwares/malware_lang_8_2', 'parsed_train_malwares/malware_lang_7_5', 'parsed_train_malwares/malware_lang_7_4', 'malware_lang_8_4', 'malware_lang_1_4', 'parsed_train_malwares/malware_lang_9_2', 'malware_lang_1_1', 'malware_lang_8_1', 'malware_lang_1_3', 'malware_lang_1_2', 'malware_lang_9_4', 'malware_lang_9_1', 'malware_lang_9_3', 'malware_lang_9_2', 'parsed_train_malwares/malware_lang_9_4', 'malware_lang_5_1', 'malware_lang_5_3', 'malware_lang_5_2', 'malware_lang_5_4', 'parsed_train_malwares/malware_lang_5_4', 'malware_lang_2_2', 'malware_lang_2_3', 'malware_lang_2_1', 'malware_lang_2_4', 'malware_lang_8_2', 'malware_lang_3_3', 'malware_lang_3_2', 'malware_lang_3_1', 'parsed_train_malwares/malware_lang_8_3', 'parsed_train_malwares/malware_lang_8_4', 'parsed_train_malwares/malware_lang_8_5', 'malware_lang_3_4', 'parsed_train_malwares/malware_lang_9_1', 'parsed_train_malwares/malware_lang_9_3', 'parsed_train_malwares/malware_lang_4_3', 'parsed_train_malwares/malware_lang_9_5', 'parsed_train_malwares/malware_lang_3_5', 'parsed_train_malwares/malware_lang_8_1', 'parsed_train_malwares/malware_lang_4_1', 'parsed_train_malwares/malware_lang_4_4', 'parsed_train_malwares/malware_lang_4_5', 'malware_lang_6_4', 'parsed_train_malwares/malware_lang_3_4', 'malware_lang_6_2', 'malware_lang_6_3', 'parsed_train_malwares/malware_lang_4_2', 'malware_lang_6_1', 'parsed_train_malwares/malware_lang_5_5', 'parsed_train_malwares/malware_lang_3_3', 'malware_lang_7_4', 'malware_lang_7_3', 'malware_lang_7_2', 'malware_lang_7_1', 'parsed_train_malwares/malware_lang_5_2', 'parsed_train_malwares/malware_lang_2_4', 'parsed_train_malwares/malware_lang_2_5', 'parsed_train_malwares/malware_lang_2_2', 'parsed_train_malwares/malware_lang_2_3', 'parsed_train_malwares/malware_lang_2_1', 'malware_lang_8_3', 'malware_lang_4_1', 'malware_lang_4_2', 'malware_lang_4_3', 'malware_lang_4_4', 'parsed_train_malwares/malware_lang_3_2', 'parsed_train_malwares/malware_lang_3_1']
+>>> 
+>>> 
+>>> 
+>>> for malware_class in range(1, 10):
+...     sum = 0.0
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(instance)
+... 
+>>> 
+>>> for malware_class in range(1, 10):
+...     sum = 0.0
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...     
+... 
+>>> 
+>>> model = gensim.models.Word2Vec(vocabulary, min_count=1)
+>>> 
+>>> for malware_class in range(1, 10):
+...     sum = 0.0
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             
+>>> 
+>>> malware_train_docs = dict()
+>>> for malware_class in range(1, 10):
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             malware_train_docs[malware_name] = open(malware_name, "r").read().splitlines()
+... 
+>>> malware_train_docs.keys()
+['parsed_train_malwares/malware_lang_1_1', 'parsed_train_malwares/malware_lang_1_3', 'parsed_train_malwares/malware_lang_1_2', 'parsed_train_malwares/malware_lang_1_5', 'parsed_train_malwares/malware_lang_1_4', 'parsed_train_malwares/malware_lang_6_2', 'parsed_train_malwares/malware_lang_6_3', 'parsed_train_malwares/malware_lang_6_1', 'parsed_train_malwares/malware_lang_6_4', 'parsed_train_malwares/malware_lang_6_5', 'parsed_train_malwares/malware_lang_7_3', 'parsed_train_malwares/malware_lang_7_2', 'parsed_train_malwares/malware_lang_7_1', 'parsed_train_malwares/malware_lang_7_5', 'parsed_train_malwares/malware_lang_7_4', 'parsed_train_malwares/malware_lang_8_1', 'parsed_train_malwares/malware_lang_8_2', 'parsed_train_malwares/malware_lang_8_3', 'parsed_train_malwares/malware_lang_8_4', 'parsed_train_malwares/malware_lang_8_5', 'parsed_train_malwares/malware_lang_9_1', 'parsed_train_malwares/malware_lang_9_3', 'parsed_train_malwares/malware_lang_9_2', 'parsed_train_malwares/malware_lang_9_5', 'parsed_train_malwares/malware_lang_9_4', 'parsed_train_malwares/malware_lang_4_4', 'parsed_train_malwares/malware_lang_4_5', 'parsed_train_malwares/malware_lang_4_1', 'parsed_train_malwares/malware_lang_4_2', 'parsed_train_malwares/malware_lang_4_3', 'parsed_train_malwares/malware_lang_5_5', 'parsed_train_malwares/malware_lang_5_4', 'parsed_train_malwares/malware_lang_5_1', 'parsed_train_malwares/malware_lang_5_3', 'parsed_train_malwares/malware_lang_5_2', 'parsed_train_malwares/malware_lang_2_4', 'parsed_train_malwares/malware_lang_2_5', 'parsed_train_malwares/malware_lang_2_2', 'parsed_train_malwares/malware_lang_2_3', 'parsed_train_malwares/malware_lang_2_1', 'parsed_train_malwares/malware_lang_3_5', 'parsed_train_malwares/malware_lang_3_4', 'parsed_train_malwares/malware_lang_3_3', 'parsed_train_malwares/malware_lang_3_2', 'parsed_train_malwares/malware_lang_3_1']
+>>> len(malware_docs.keys())
+81
+>>> len(malware_train_docs.keys())
+45
+>>> 
+>>> 
+>>> for malware_class in range(1, 10):
+...     sum = 0.0
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             distance = model.wmdistance(malware_test_words, malware_train_docs[malware_name])
+...             print(malware_test_name + '  -->  ' + malware_name + '  =  ' + str(distance))
+...             sum = sum + distance
+...     average = sum / 5.0
+...     print('average  =  ' + str(average))
+... 
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_1_1  =  3.10239720179
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_1_2  =  2.85161302184
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_1_3  =  1.04262056233
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_1_4  =  2.10501774956
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_1_5  =  2.18471874707
+average  =  2.25727345652
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_2_1  =  2.84564262113
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_2_2  =  2.00578917827
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_2_3  =  5.78388768187
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_2_4  =  1.82378810504
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_2_5  =  2.08766001178
+average  =  2.90935351962
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_3_1  =  2.30489473234
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_3_2  =  2.23945002346
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_3_3  =  2.23238821496
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_3_4  =  2.33011787972
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_3_5  =  2.32882725694
+average  =  2.28713562148
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_4_1  =  3.6873746337
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_4_2  =  7.55745937737
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_4_3  =  7.6572804795
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_4_4  =  3.97199180679
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_4_5  =  5.15098875754
+average  =  5.60501901098
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_5_1  =  2.87168887926
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_5_2  =  2.99085869237
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_5_3  =  inf
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_5_4  =  8.29436684755
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_5_5  =  3.34917718184
+average  =  inf
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_6_1  =  1.3931988806
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_6_2  =  9.66919541816
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_6_3  =  9.28654667982
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_6_4  =  9.8187062401
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_6_5  =  9.74762164788
+average  =  7.98305377331
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_7_1  =  2.44632168436
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_7_2  =  2.40672816479
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_7_3  =  2.42876341234
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_7_4  =  4.02410944036
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_7_5  =  2.44320024931
+average  =  2.74982459023
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_8_1  =  4.57101143607
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_8_2  =  2.00208031492
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_8_3  =  4.60429838738
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_8_4  =  4.52992015764
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_8_5  =  4.01013531965
+average  =  3.94348912313
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_9_1  =  2.47471645293
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_9_2  =  3.40264572706
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_9_3  =  2.87520648635
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_9_4  =  2.24241293851
+parsed_test_malwares/malware_lang_1_1  -->  parsed_train_malwares/malware_lang_9_5  =  2.97736908644
+average  =  2.79447013826
+>>> 
+>>> 
+>>> malware_test_name
+'parsed_test_malwares/malware_lang_1_1'
+>>> malware_test_name = 'parsed_test_malwares/malware_lang_3_1'
+>>> vocabulary = []
+>>> malware_test_words = open(malware_test_name, "r").read().splitlines()
+>>> vocabulary.append(malware_test_words)
+>>> for malware_class in range(1, 10):
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             malware_words = open(malware_name, "r").read().splitlines()
+...             vocabulary.append(malware_words)
+... 
+>>> len(vocabulary)
+46
+>>> 
+>>> 
+>>> model = gensim.models.Word2Vec(vocabulary, min_count=1)
+>>> 
+>>> 
+>>> for malware_class in range(1, 10):
+...     sum = 0.0
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             distance = model.wmdistance(malware_test_words, malware_train_docs[malware_name])
+...             print(malware_test_name + '  -->  ' + malware_name + '  =  ' + str(distance))
+...             sum = sum + distance
+...     average = sum / 5.0
+...     print('average  =  ' + str(average) + '\n')
+... 
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_1_1  =  4.93724877308
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_1_2  =  4.49608220556
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_1_3  =  4.13038714722
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_1_4  =  4.79183627033
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_1_5  =  4.82710994189
+average  =  4.63653286762
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_2_1  =  4.78103289593
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_2_2  =  4.43008422295
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_2_3  =  3.1236347783
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_2_4  =  3.99496747751
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_2_5  =  4.16603913936
+average  =  4.09915170281
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_3_1  =  5.20537032112
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_3_2  =  4.89069998164
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_3_3  =  5.08374586185
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_3_4  =  5.12346815796
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_3_5  =  5.1110781519
+average  =  5.08287249489
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_4_1  =  5.72538683094
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_4_2  =  8.95638222982
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_4_3  =  9.12328453558
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_4_4  =  5.9637765217
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_4_5  =  6.70400447102
+average  =  7.29456691781
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_5_1  =  5.33067236946
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_5_2  =  5.28900116591
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_5_3  =  inf
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_5_4  =  9.42267337238
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_5_5  =  5.58950110927
+average  =  inf
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_6_1  =  4.27525158453
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_6_2  =  10.2528445296
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_6_3  =  9.77703211338
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_6_4  =  10.1904442726
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_6_5  =  10.0833954504
+average  =  8.91579359011
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_7_1  =  5.08150949982
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_7_2  =  5.0278833937
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_7_3  =  5.06699517139
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_7_4  =  5.80077330499
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_7_5  =  4.90808951558
+average  =  5.1770501771
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_8_1  =  6.84546837192
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_8_2  =  4.66457745892
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_8_3  =  6.85698476845
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_8_4  =  6.82282922428
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_8_5  =  5.7221946552
+average  =  6.18241089576
+
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_9_1  =  5.38968285565
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_9_2  =  5.24787137519
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_9_3  =  4.88025248302
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_9_4  =  4.87863869022
+parsed_test_malwares/malware_lang_3_1  -->  parsed_train_malwares/malware_lang_9_5  =  5.22591211212
+average  =  5.12447150324
+
+>>> 
+>>> 
+>>> malware_test_name = 'parsed_test_malwares/malware_lang_9_1'
+>>> vocabulary = []
+>>> malware_test_words = open(malware_test_name, "r").read().splitlines()
+>>> vocabulary.append(malware_test_words)
+>>> for malware_class in range(1, 10):
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             malware_words = open(malware_name, "r").read().splitlines()
+...             vocabulary.append(malware_words)
+... 
+
+>>> 
+>>> len(vocabulary)
+46
+>>> model = gensim.models.Word2Vec(vocabulary, min_count=1)
+^[[Afor malware_class in range(1, 10):
+...     sum = 0.0
+...     for malware_instance in range(1, 6):
+...             malware_name = 'parsed_train_malwares/malware_lang_' + str(malware_class) + '_' + str(malware_instance)
+...             distance = model.wmdistance(malware_test_words, malware_train_docs[malware_name])
+...             print(malware_test_name + '  -->  ' + malware_name + '  =  ' + str(distance))
+...             sum = sum + distance
+...     average = sum / 5.0
+...     print('average  =  ' + str(average) + '\n')
+... 
+
+
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_1_1  =  4.36879457757
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_1_2  =  3.94519547451
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_1_3  =  3.44089863714
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_1_4  =  4.19957541734
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_1_5  =  4.08834629827
+average  =  4.00856208097
+
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_2_1  =  4.13960556869
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_2_2  =  3.722899872
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_2_3  =  3.78332694765
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_2_4  =  3.29219159209
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_2_5  =  3.4060309406
+average  =  3.66881098421
+
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_3_1  =  4.64208366854
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_3_2  =  4.51910726075
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_3_3  =  4.55057680748
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_3_4  =  4.71919512057
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_3_5  =  4.69165153657
+average  =  4.62452287878
+
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_4_1  =  5.33788854789
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_4_2  =  8.80239461757
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_4_3  =  8.45251070216
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_4_4  =  5.61707647939
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_4_5  =  6.27062225025
+average  =  6.89609851945
+
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_5_1  =  4.73890310226
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_5_2  =  4.71955743521
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_5_3  =  inf
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_5_4  =  9.30321371948
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_5_5  =  5.01249333692
+average  =  inf
+
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_6_1  =  3.61111601554
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_6_2  =  9.87049822574
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_6_3  =  9.50064789387
+parsed_test_malwares/malware_lang_9_1  -->  parsed_train_malwares/malware_lang_6_4  =  9.89675642765

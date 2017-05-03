@@ -1,0 +1,45 @@
+## dataset 
+##       50 malware assembly files from each class
+## parsing
+##       keeping only opcodes
+## leave-one-out validation
+##       choose random malware as test malware from parsed malwares
+## preprocessing
+##       considering only parsed malwares in the same range of word length as the test malware (+/- 1/3 of text file word length)
+## word2vec model
+##       vocabulary encompasses all train malwares and single test malware
+##       skip window: gensim default
+## distance measure
+##       gensim's wmd
+
+
+(TensorFlow) yass-MacBook-Pro:malwareTesting lanaawad$ python test_gensim.py parsed_test_malwares/malware_lang_4_3
+
+
+
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_1_48  =  0.197787069972
+average  =  0.197787069972
+
+average  =  -1
+
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_3_28  =  0.181501817689
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_3_33  =  0.185367419868
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_3_39  =  0.176559576995
+average  =  0.181142938184
+
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_4_15  =  1.70223580885
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_4_34  =  2.44734390135
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_4_37  =  0.0563421229756
+average  =  1.40197394439
+
+average  =  -1
+
+average  =  -1
+
+average  =  -1
+
+parsed_test_malwares/malware_lang_4_3  -->  malware_lang_8_22  =  0.20258444364
+average  =  0.20258444364
+
+average  =  -1
+

@@ -1,0 +1,234 @@
+wcd between text_examples_2/parsed_test/file_2 and text_examples_2/parsed_train/file_1
+0.00131705045611
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/file_3 and text_examples_2/parsed_train/file_1
+0.00160824430785
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.00916202444908
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/oranges
+0.0238092907128
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/bread and text_examples_2/parsed_train/oranges
+0.00878773308779
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00331409585877
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0176572278454
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.0104627368525
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/apples
+0.00995629331482
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/bread
+0.00889930369363
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/cars
+0.0193385223743
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/oranges
+0.0165982660945
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/apples
+0.00503355299934
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00391844826409
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0189951775605
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.0109454185113
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/bread and text_examples_2/parsed_train/apples
+0.00315324754141
+wcd between text_examples_2/parsed_test/bread and text_examples_2/parsed_train/bread
+0.00134011961041
+wcd between text_examples_2/parsed_test/bread and text_examples_2/parsed_train/cars
+0.017923043003
+wcd between text_examples_2/parsed_test/bread and text_examples_2/parsed_train/oranges
+0.0100097810762
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/apples
+0.0170591033298
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/bread
+0.0175349278423
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/cars
+0.0309053559358
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/oranges
+0.0261891968833
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/apples
+0.01001677688
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/bread
+0.00875283827314
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/cars
+0.0227707228541
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/oranges
+0.0184874804939
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/apples
+0.0230357392224
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/bread
+0.0227246499578
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/cars
+0.0389421338153
+wcd between text_examples_2/parsed_test/cars and text_examples_2/parsed_train/oranges
+0.0318600808203
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/apples
+0.00891038732144
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/bread
+0.00628094578149
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/cars
+0.0190287431463
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/oranges
+0.012642588676
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/apples
+0.0102218541573
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/bread
+0.0108427734068
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/cars
+0.0295249619522
+wcd between text_examples_2/parsed_test/oranges and text_examples_2/parsed_train/oranges
+0.0261887861985
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/apples
+0.0065806435942
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00211034960526
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0226386243384
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.0102378498699
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/apples
+0.00658064355521
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00211034956378
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0226386243336
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.010237849763
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/apples
+0.0
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00362891018846
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0275867652764
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.010186451719
+
+classification
+1
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/apples
+0.00426703518926
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00328783254379
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0172341885016
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.00860708281707
+
+classification
+2
+
+
+
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/apples
+0.00618898955442
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/bread
+0.00393764819831
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/cars
+0.0194409452185
+wcd between text_examples_2/parsed_test/apples and text_examples_2/parsed_train/oranges
+0.0113915704636
+
+classification
+2
+
+
+

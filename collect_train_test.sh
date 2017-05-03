@@ -32,7 +32,7 @@ do
 
         # copy files to directories
         echo "Copying ${TRAIN_SAMPLE_SIZE} train files to ${DESTINATION_TRAIN_DIR}/${class}"
-        for file in `ls ${SOURCE_DIR}/${class} | head -30 | tail -${TRAIN_SAMPLE_SIZE}`
+        for file in `ls ${SOURCE_DIR}/${class} | head -${TRAIN_SAMPLE_SIZE}`
         do
                 cp ${SOURCE_DIR}/${class}/${file} ${DESTINATION_TRAIN_DIR}/${class}
         done
@@ -41,6 +41,28 @@ do
         for file in `ls ${SOURCE_DIR}/${class} | tail -${TEST_SAMPLE_SIZE}`
         do
                 cp ${SOURCE_DIR}/${class}/${file} ${DESTINATION_TEST_DIR}/${class}
+#                test_size=`wc -l ${SOURCE_DIR}/${class}/${file} | tr -s " " | cut -f2 -d " "`
+#                counter=0
+#                for file in `ls ${SOURCE_DIR}/${class}`
+#                do
+#                        train_size=`wc -l ${SOURCE_DIR}/${class}/${file} | tr -s " " | cut -f2 -d " "`
+#                        if [ "${test_size}" -gt $((${train_size} - 5000)) ]
+#                        then
+#                                if [ "${test_size}" -lt $((${train_size} + 5000)) ]
+#                                then
+#                                        echo "found good file..."
+#                                        cp ${SOURCE_DIR}/${class}/${file} ${DESTINATION_TRAIN_DIR}/${class}
+#                                        let counter=${counter}+1
+#                                else
+#                                        echo "file not good..."
+#                                fi
+#                        fi
+#                        if [ "${counter}" -eq "${TRAIN_SAMPLE_SIZE}" ]
+#                        then
+#                                echo "Copied ${TRAIN_SAMPLE_SIZE} train files to ${DESTINATION_TRAIN_DIR}/${class}"
+#                                break
+#                        fi
+#                done
         done
 
         echo

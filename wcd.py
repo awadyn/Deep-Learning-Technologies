@@ -34,7 +34,8 @@ print("----> Find document distance by applying Word Centroid Distance algorithm
 
 
 # file containing all words in our vocabulary
-vocabulary_file = open("vocabulary", "r")
+#vocabulary_file = open("vocabulary", "r")
+vocabulary_file = open("text_examples_2/vocabulary", "r")
 vocabulary = list(set(vocabulary_file.read().splitlines()))
 vocabulary_size = len(vocabulary)
 
@@ -45,8 +46,11 @@ test_malware = sys.argv[1]
 find_embeddings = sys.argv[2]
 
 # classified/training malwares
-malware_dir = "parsed_malwares"
-embeddings_dir = "malware_embeddings"
+#malware_dir = "parsed_malwares"
+#embeddings_dir = "malware_embeddings"
+malware_dir = "text_examples_2/parsed_train"
+embeddings_dir = "text_examples_2/embeddings"
+
 malwares = []
 for root, dirs, filenames in os.walk(malware_dir):
         malwares.append(test_malware)
@@ -107,12 +111,14 @@ else:
         if find_embeddings == "-no-embeddings":
                 # only find embeddings for test file
                 malwares_for_embedding = []
-                malwares_for_embedding.append(malwares[0])
+                #malwares_for_embedding.append(malwares[0])
 
 # find embeddings
 for malware in malwares_for_embedding:
         # store name to save embeddings after generating them
-        malware_name = malware[malware.index('/') + 1 :]
+        #malware_name = malware[malware.index('/') + 1 :]
+        temp_name = malware[malware.index('/')+1 :]
+        malware_name = temp_name[temp_name.index('/')+1 :]
         
         # Step 1: Read the data into a list of strings.
         def read_data(filename):
@@ -186,15 +192,18 @@ for malware in malwares_for_embedding:
 
         # Step 4: Build and train a skip-gram model.
         batch_size = 16
-        skip_window = 10         # How many words to consider left and right.
+        skip_window = 4         # How many words to consider left and right.
         num_skips = 2           # How many times to reuse an input to generate a label.
-        embedding_size = 128    # Dimension of the embedding vector.
+        embedding_size = 100    # Dimension of the embedding vector.
         # We pick a random validation set to sample nearest neighbors. Here we limit the
         # validation samples to the words that have a low numeric ID, which by
         # construction are also the most frequent.
-        valid_size = 16         # Random set of words to evaluate similarity on.
-        valid_window = 100      # Only pick dev samples in the head of the distribution.
-        num_sampled = 64        # Number of negative examples to sample.
+        #valid_size = 16         # Random set of words to evaluate similarity on.
+        valid_size = 4         # Random set of words to evaluate similarity on.
+        #valid_window = 100      # Only pick dev samples in the head of the distribution.
+        valid_window = 25      # Only pick dev samples in the head of the distribution.
+        #num_sampled = 64        # Number of negative examples to sample.
+        num_sampled = 16        # Number of negative examples to sample.
         valid_examples = np.random.choice(valid_window, valid_size, replace=False)
         
         graph = tf.Graph()  
@@ -240,7 +249,7 @@ for malware in malwares_for_embedding:
         
 
         # Step 5: Begin training.
-        num_steps = 50001
+        num_steps = 70001
         with tf.Session(graph=graph) as session:
                 # We must initialize all variables before we use them.
                 init.run()
@@ -267,16 +276,20 @@ for malware in malwares_for_embedding:
                 word_embeddings.append(final_embeddings)
                         
 if find_embeddings == '-no-embeddings':
-        for malware in malwares[1:]:
-                malware_name = malware[malware.index('/') + 1 :]
+        for malware in malwares:
+                temp_name = malware[malware.index('/')+1 :]
+                malware_name = temp_name[temp_name.index('/')+1 :]
                 word_embeddings.append(np.loadtxt(embeddings_dir + '/' + malware_name + '.embeddings'))
+#        for malware in malwares[1:]:
+#                malware_name = malware[malware.index('/') + 1 :]
+#                word_embeddings.append(np.loadtxt(embeddings_dir + '/' + malware_name + '.embeddings'))
 
 
-#print("word_embeddings:")
-#for embedding in word_embeddings:
-#        print(embedding)
-#        print("\n")
-#print("-----\n\n\n\n")
+print("word_embeddings:")
+for embedding in word_embeddings:
+        print(embedding)
+        print("\n")
+print("-----\n\n\n\n")
 
 
 

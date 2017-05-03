@@ -1,0 +1,102 @@
+## dataset 
+##       50 malware assembly files from each class
+## parsing
+##       keeping only opcodes
+## leave-one-out validation
+##       choose random malware as test malware from parsed malwares
+## preprocessing
+##       considering only parsed malwares in the same range of word length as the test malware (+/- 1/3 of text file word length)
+## word2vec model
+##       vocabulary encompasses all train malwares and single test malware
+##       skip window: gensim default
+## distance measure
+##       gensim's wmd
+
+
+(TensorFlow) yass-MacBook-Pro:malwareTesting lanaawad$ python test_gensim.py parsed_test_malwares/malware_lang_6_2
+
+
+
+average  =  -1
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_2_46  =  8.42272004549
+average  =  8.42272004549
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_1  =  8.57903759628
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_11  =  8.59068610579
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_12  =  8.59111557623
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_13  =  8.57644131169
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_14  =  8.57728546939
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_16  =  8.57728678013
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_17  =  8.59183320739
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_18  =  8.58364139263
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_19  =  8.57352024441
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_2  =  8.57763783165
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_20  =  8.57966786862
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_21  =  8.58382934186
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_22  =  8.57718558012
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_23  =  8.58413808536
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_24  =  8.57721525091
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_25  =  8.59066289876
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_26  =  8.56781551623
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_27  =  8.57717909498
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_29  =  8.57547607234
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_3  =  8.59188844566
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_30  =  8.57534977505
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_31  =  8.57602309659
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_32  =  8.57709258389
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_34  =  8.59142408246
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_35  =  8.57956001091
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_36  =  8.58705964899
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_37  =  8.5749497284
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_38  =  8.59147179264
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_4  =  8.57806206353
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_40  =  8.57787825656
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_41  =  8.58380749554
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_42  =  8.57599204948
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_43  =  8.57557491413
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_44  =  8.56798254743
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_47  =  8.58796602226
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_48  =  8.57806667112
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_49  =  8.57849488009
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_5  =  8.57674316339
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_50  =  8.57185494245
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_7  =  8.59162110879
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_8  =  8.58493709378
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_3_9  =  8.58702889472
+average  =  8.5807734403
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_4_41  =  1.63469419567
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_4_50  =  8.36276187607
+average  =  4.99872803587
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_5_19  =  1.84965948684
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_5_29  =  1.98679854857
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_5_42  =  1.93043774721
+average  =  1.92229859421
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_11  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_14  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_16  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_17  =  8.56545181178
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_18  =  8.56739914133
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_27  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_38  =  8.56650146384
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_39  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_49  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_7  =  0.0
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_6_8  =  0.0
+average  =  2.33630476518
+
+average  =  -1
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_8_16  =  8.51275163135
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_8_18  =  8.48785134772
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_8_24  =  8.46668725596
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_8_30  =  8.50127377643
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_8_36  =  8.47530838519
+average  =  8.48877447933
+
+parsed_test_malwares/malware_lang_6_2  -->  malware_lang_9_13  =  8.40749312127
+average  =  8.40749312127
+
